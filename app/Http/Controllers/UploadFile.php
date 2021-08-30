@@ -4,13 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\UsersImport;
 
 class UploadFile extends Controller
 {
-    public function import() 
+    public function fileImportExport()
     {
-        Excel::import(new UploadFile, 'users.xlsx');
+       return view('users');
+    }
+
+    public function fileImport(Request $request) 
+    {
+        // dd($request);
+        Excel::import(new UsersImport, $request->file('file')->store('temp'));
         
-        return redirect('/users')->with('success', 'All good!');
+        return back();
     }//
+
 }

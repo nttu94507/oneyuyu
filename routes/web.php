@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\uploadfile;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,3 +18,5 @@ Route::get('users', function()
 {
     return View('users');
 });
+
+Route::post('uploadfile', [UploadFile::class, 'fileImport'])->name('uploadfile');
