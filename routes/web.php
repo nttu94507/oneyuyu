@@ -16,7 +16,7 @@ Route::get('product', [ProductController::class, 'list']);
 Route::get('/', function () {return view('welcome');});
 Route::get('users', function()
 {
-    return View('users');
+    return View('users')->with('excel',null);
 });
 
 Route::post('uploadfile', [UploadFile::class, 'fileImport'])->name('uploadfile');

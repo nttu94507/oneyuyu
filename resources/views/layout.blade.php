@@ -14,13 +14,16 @@
             <button class="btn btn-primary">Import data</button>
             <a class="btn btn-success" href="{{ route('uploadfile') }}">Export data</a>
         </form>
-        <ul>
-            
-            @foreach ($excel as $user)
-                <li id="filevalue"style="background:red;list-style-type:none" >{{$user->0}}</li>
-            @endforeach
-        
-        </ul>
+       
+        @if($excel)
+        @foreach ($excel as $user)
+        <div style="display:flex">
+            <ul style="flex:1;background:red">{{$user[0]}}</ul>
+            <ul style="flex:1;background:red">{{$user[1]}}</ul>
+            <ul style="flex:1;background:red">{{$user[2]}}</ul>
+        </div>
+        @endforeach
+        @endif
         <h1>Laravel Quickstart</h1>
 
         @yield('content')

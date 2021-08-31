@@ -21,8 +21,8 @@ class UploadFile extends Controller
             exit('上傳檔案為空！');
         }
         $rows = Excel::toArray(new UsersImport, $request->file('file'));
-        dd($rows);
-        return view('users')->with('excel',$rows);
+        // dd($rows[0]);
+        return view('users')->with('excel',$rows[0]);
         // return response()->json(["rows"=>$rows]);
     
     }//
