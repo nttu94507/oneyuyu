@@ -15,10 +15,16 @@ class UploadFile extends Controller
 
     public function fileImport(Request $request) 
     {
-        // dd($request);
-        Excel::import(new UsersImport, $request->file('file')->store('temp'));
-        
-        return back();
+        // dd($request->file('file'));
+        // return $request->all();
+        if(!$request->hasFile('file')){
+            exit('上傳檔案為空！');
+        }
+        $rows = Excel::toArray(new UsersImport, $request->file('file'));
+        dd($rows);
+        return view('users')->with('excel',$rows);
+        // return response()->json(["rows"=>$rows]);
+    
     }//
 
 }

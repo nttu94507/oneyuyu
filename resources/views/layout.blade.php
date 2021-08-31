@@ -15,7 +15,11 @@
             <a class="btn btn-success" href="{{ route('uploadfile') }}">Export data</a>
         </form>
         <ul>
-            <li id="filevalue"style="background:red;list-style-type:none" >test123</li>
+            
+            @foreach ($excel as $user)
+                <li id="filevalue"style="background:red;list-style-type:none" >{{$user->0}}</li>
+            @endforeach
+        
         </ul>
         <h1>Laravel Quickstart</h1>
 
