@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\UsersImport;
+use App\Models\upload;
+
 
 class UploadFile extends Controller
 {
@@ -16,15 +18,38 @@ class UploadFile extends Controller
     public function fileImport(Request $request) 
     {
         // dd($request->file('file'));
-        // return $request->all();
+        $x = 1;
         if(!$request->hasFile('file')){
             exit('上傳檔案為空！');
         }
         $rows = Excel::toArray(new UsersImport, $request->file('file'));
-        // dd($rows[0]);
-        return view('users')->with('excel',$rows[0]);
-        // return response()->json(["rows"=>$rows]);
+        $row = $rows[0];
+        $result = [];
+        foreach($row as $index=>$user){
+            if ($index == 0){
+
+            }else{
+               UploadFile::save($user);
+               $x++;
+               $result[]=$user;
+            }
+            
+        }
+
+        return view('users')->with('excel',$result);//將輸入結果丟到user 進行foreach
+        
     
     }//
+
+    public function save($data)
+    {
+        // dd($data);
+       $user = new upload;
+       $user->name = $data[0];
+       $user->email= $data[1];
+       $user->address = $data[2];
+       $user->save();
+    }
+
 
 }

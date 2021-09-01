@@ -18,9 +18,9 @@
         @if($excel)
         @foreach ($excel as $user)
         <div style="display:flex">
-            <ul style="flex:1;background:red">{{$user[0]}}</ul>
-            <ul style="flex:1;background:red">{{$user[1]}}</ul>
-            <ul style="flex:1;background:red">{{$user[2]}}</ul>
+            <a style="flex:1;background:red">{{$user[0]}}</a>
+            <a style="flex:1;background:red">{{$user[1]}}</a>
+            <a style="flex:1;background:red">{{$user[2]}}</a>
         </div>
         @endforeach
         @endif

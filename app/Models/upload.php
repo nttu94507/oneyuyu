@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class upload extends Model
 {
     // use HasFactory;
+    
     protected $table = 'transactions';
 }
