@@ -29,7 +29,7 @@ class UploadFile extends Controller
             if ($index == 0){
 
             }else{
-               UploadFile::save($user);
+               UploadFile::saveExcel($user);
                $x++;
                $result[]=$user;
             }
@@ -41,7 +41,7 @@ class UploadFile extends Controller
     
     }//
 
-    public function save($data)
+    public function saveExcel($data)
     {
         // dd($data);
        $user = new upload;
