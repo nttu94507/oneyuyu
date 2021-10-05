@@ -33,6 +33,7 @@
         @endforeach
         @endif
        </div>
+       <div class="footer" ></div>
 
     </body>
     <script>
