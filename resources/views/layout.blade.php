@@ -9,6 +9,7 @@
     <form action="{{ route('uploadfile') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="middle" >
+                <a href="{{ url('/users') }}" class="text-sm text-gray-700 underline">Home</a>
                 <div class="upload-btn " onclick="" id="upload-button" ><h4>選擇檔案</h4></div>
                 <input type="file" name="file" class="between hidden" id="fileInput" >
                 <!-- <label class="bg" for="customFile">選擇檔案</label> -->
@@ -36,7 +37,7 @@
         @endforeach
         @else
         <div class="lists nodata">
-            <h4>沒有資料</h4>
+            <h3>沒有資料</h3>
         </div>
         @endif
        </div>
