@@ -6,21 +6,17 @@
         <link href="/css/app.css" rel="stylesheet">
     </header>
     <body>
-    <form action="{{ route('uploadfile') }}" method="POST" enctype="multipart/form-data">
-            @csrf
-            <div class="middle" >
-                <a href="{{ url('/users') }}" class="text-sm text-gray-700 underline">Home</a>
+    <div class="middle">
+        <a href="{{ url('/users') }}" class="logo">回首頁</a>
+        <form action="{{ route('uploadfile') }}" method="POST" enctype="multipart/form-data">
+             @csrf
+            <div class="" >
                 <div class="upload-btn " onclick="" id="upload-button" ><h4>選擇檔案</h4></div>
                 <input type="file" name="file" class="between hidden" id="fileInput" >
-                <!-- <label class="bg" for="customFile">選擇檔案</label> -->
                 <div class="test"><button class="between hidden" id="submit-btn">上傳檔案</button></div>
-
-                
-                
-                
             </div>
         </form>
-       
+    </div>   
         @if($excel)
         <div class="lists">  
         <div class="list-item">

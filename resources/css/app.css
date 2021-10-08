@@ -11,22 +11,22 @@ body{
 
 .lists{
     background-color: #f7f7c9;
-    margin: 0 10%;
+    margin: 30px 10%;
     border-radius: 10px;
     padding: 10px 5px;
     height: 90%;
+
 
 }
 
 .list{
     display:flex;
-    /* background-color:#f8f8e6  ;。 */
 
 }
 
 .list-item{
     display: flex;
-    /* border:solid 1px black; */
+
 }
 
 .colom{
@@ -40,7 +40,6 @@ body{
 }
 
 *{
-    /* color: black; */
     color:rgb(38, 38, 168)
 }
 
@@ -59,7 +58,7 @@ body{
 }
 
 p{
-    /* background-color: #fff; */
+
     justify-content: center;
 }
 
@@ -68,19 +67,34 @@ p{
 }
 
 .upload-btn{
-    width: 10%;
-    height: 30px;
+    width: 100px;
     background-color: rgb(48, 165, 219);
     border-radius: 30px ;
-    border-color: none;
-    padding-top: 3px;
-    /* text-align: center;
-    text-underline-position:\; */
+    padding:4% 0;
 }
 
 h4{
     margin:0 ;
-    justify-content: flex-end;
+    justify-content: center;
     text-align: center;
     color: white;
+}
+
+.logo{
+    width: 100px;
+    text-align: center;
+    border-radius: 30px;
+    font-size: 22px;
+    color: #0c4479;
+    font-weight: bold ;
+    
+}
+
+.logo:hover{
+    background-color: #475c70;
+}
+
+
+a{
+    text-decoration: none;
 }
