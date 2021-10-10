@@ -9,7 +9,10 @@
     </header>
     <body>
     <div class="middle">
-    <a href="{{ url('/users') }}" class="logo"><i class="fi fi-rr-home p100"></i></a>
+        <div class="upload-form">
+            <a href="{{ url('/users') }}" class="logo"><i class="fi fi-rr-home p100"></i></a>
+        </div>
+    
         <!-- <a href="{{ url('/users') }}" class="logo"><img src="https://img.icons8.com/ios/50/000000/person-at-home.png" class="p100"/></a> -->
         <form action="{{ route('uploadfile') }}" method="POST" enctype="multipart/form-data">
              @csrf
