@@ -87,6 +87,10 @@ a {
   text-decoration: none;
 }
 
+.p100 {
+  color: white;
+}
+
 .upload-form {
   align-items: center;
   /* padding-top: 5px; */
