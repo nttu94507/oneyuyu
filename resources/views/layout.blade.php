@@ -3,14 +3,17 @@
         <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
         <link href="/css/app.css" rel="stylesheet">
+
     </header>
     <body>
     <div class="middle">
-        <a href="{{ url('/users') }}" class="logo">回首頁</a>
+    <a href="{{ url('/users') }}" class="logo"><i class="fi fi-rr-home p100"></i></a>
+        <!-- <a href="{{ url('/users') }}" class="logo"><img src="https://img.icons8.com/ios/50/000000/person-at-home.png" class="p100"/></a> -->
         <form action="{{ route('uploadfile') }}" method="POST" enctype="multipart/form-data">
              @csrf
-            <div class="" >
+            <div class="upload-form" >
                 <div class="upload-btn " onclick="" id="upload-button" ><h4>選擇檔案</h4></div>
                 <input type="file" name="file" class="between hidden" id="fileInput" >
                 <div class="test"><button class="between hidden" id="submit-btn">上傳檔案</button></div>

@@ -81,20 +81,26 @@ h4{
 }
 
 .logo{
-    width: 100px;
+    width: 50px;
     text-align: center;
-    border-radius: 30px;
+    border-radius: 10px;
     font-size: 22px;
     color: #0c4479;
-    font-weight: bold ;
-    
+    /* padding-top: 10px ; */
 }
-
-.logo:hover{
-    background-color: #475c70;
-}
-
 
 a{
     text-decoration: none;
+}
+
+.p100{
+    color:white ;
+}
+
+.upload-form{
+    align-items: center;
+}
+
+form{
+    margin: 0;
 }
