@@ -11,7 +11,16 @@ const mix = require('laravel-mix');
  |
  */
 
+// mix.js('resources/js/app.js', 'public/js')
+//     .postCss('resources/css/app.css', 'public/css', [
+//         //
+//     ]);
+
+
+//command :
+//npm install sass-loader@^12.1.0 sass resolve-url-loader@^4.0.0 --save-dev --legacy-peer-deps
+
 mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
+    .sass('resources/sass/app.scss', 'public/css', [
         //
     ]);

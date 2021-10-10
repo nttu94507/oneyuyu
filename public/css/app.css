@@ -1,0 +1,97 @@
+.middle {
+  justify-content: space-between;
+  display: flex;
+  background-color: #33699b;
+  padding: 10px 10%;
+}
+
+body {
+  margin: 0;
+}
+
+.lists {
+  background-color: #f7f7c9;
+  margin: 30px 10%;
+  border-radius: 10px;
+  padding: 10px 5px;
+  height: 90%;
+}
+
+.list {
+  display: flex;
+}
+
+.list-item {
+  display: flex;
+}
+
+.colom {
+  flex: 1;
+  text-align: center;
+  margin: 5px;
+}
+
+body {
+  background-color: #bfdfff;
+}
+
+* {
+  color: #2626a8;
+}
+
+.footer {
+  width: 100%;
+  height: 20%;
+  background-color: rgba(175, 175, 175, 0.8);
+  margin-top: 50px;
+}
+
+.nodata {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+p {
+  justify-content: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.upload-btn {
+  width: 100px;
+  background-color: #30a5db;
+  border-radius: 30px;
+  padding: 4% 0;
+}
+
+h4 {
+  margin: 0;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.logo {
+  width: 50px;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 22px;
+  color: #0c4479;
+  /* padding-top: 10px ; */
+}
+
+a {
+  text-decoration: none;
+}
+
+.upload-form {
+  align-items: center;
+  /* padding-top: 5px; */
+}
+
+form {
+  margin: 0;
+}
