@@ -10,10 +10,10 @@ use App\Models\upload;
 
 class UploadFile extends Controller
 {
-    public function fileImportExport()
-    {
-       return view('users');
-    }
+    // public function fileImportExport()
+    // {
+    //    return view('users');
+    // }
 
     public function fileImport(Request $request) 
     {
@@ -29,25 +29,30 @@ class UploadFile extends Controller
             if ($index == 0){
 
             }else{
-               UploadFile::save($user);
-               $x++;
-               $result[]=$user;
+                // dd($user);
+                $reset ['name'] = $user [0];
+                $reset ['email'] = $user [1];
+                $reset ['address'] = $user [2];
+                // dd($reset);
+                UploadFile::saveExcel($reset);
+                $x++;
+                $result[]=$reset;
             }
             
         }
-
+        // dd($result);
         return view('users')->with('excel',$result);//將輸入結果丟到user 進行foreach
         
     
     }//
 
-    public function save($data)
+    public function saveExcel($data)
     {
-        // dd($data);
+        // dd($data['name']);
        $user = new upload;
-       $user->name = $data[0];
-       $user->email= $data[1];
-       $user->address = $data[2];
+       $user->name = $data['name'];
+       $user->email= $data['email'];
+       $user->address = $data['address'];
        $user->save();
     }
 
