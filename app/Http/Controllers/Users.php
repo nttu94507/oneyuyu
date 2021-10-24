@@ -10,7 +10,7 @@ class Users extends Controller
 
     public function Users(Request $request) 
     {
-        $users = DB::table('transactions')->get();
+        $users = DB::table('usersdata')->get();
         $result =[];
         foreach ($users as $user){
             // dd($user->name);
