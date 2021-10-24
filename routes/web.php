@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\uploadfile;
+use App\Http\Controllers\Users;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +15,10 @@ use App\Http\Controllers\uploadfile;
 */
 Route::get('product', [ProductController::class, 'list']);
 Route::get('/', function () {return view('welcome');});
-Route::get('users', function()
-{
-    return View('users')->with('excel',null);
-});
+// Route::get('users', function()
+// {
+//     return View('users')->with('excel',null);
+// });
 
 Route::post('uploadfile', [UploadFile::class, 'fileImport'])->name('uploadfile');
+Route::get('users', [Users::class, 'Users']);

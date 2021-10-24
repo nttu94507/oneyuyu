@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
-        <link href="/css/app.css" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
     </header>
     <body>
@@ -32,9 +32,9 @@
         </div>
         @foreach ($excel as $user)
         <div  class="list">
-            <a class="colom">{{$user[0]}}</a>
-            <a class="colom">{{$user[1]}}</a>
-            <a class="colom">{{$user[2]}}</a>
+            <a class="colom">{{$user['name']}}</a>
+            <a class="colom">{{$user['email']}}</a>
+            <a class="colom">{{$user['address']}}</a>
         </div>
         @endforeach
         @else
