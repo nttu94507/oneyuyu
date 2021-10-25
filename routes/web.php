@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Uploadfile;
+use App\Http\Controllers\UploadFile;
 use App\Http\Controllers\Users;
 /*
 |--------------------------------------------------------------------------
