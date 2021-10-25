@@ -7,14 +7,8 @@ use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\UsersImport;
 use App\Models\upload;
 
-
 class UploadFile extends Controller
 {
-    // public function fileImportExport()
-    // {
-    //    return view('users');
-    // }
-
     public function fileImport(Request $request) 
     {
         // dd($request->file('file'));
@@ -55,6 +49,5 @@ class UploadFile extends Controller
        $user->address = $data['address'];
        $user->save();
     }
-
-
+    //
 }
