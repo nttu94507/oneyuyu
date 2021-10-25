@@ -20,5 +20,5 @@ Route::get('/', function () {return view('welcome');});
 //     return View('users')->with('excel',null);
 // });
 
-Route::post('uploadfile', [UploadFile::class, 'fileImport'])->name('Uploadfile');
+Route::post('UploadFile', [UploadFile::class, 'fileImport'])->name('UploadFile');
 Route::get('users', [Users::class, 'Users']);
