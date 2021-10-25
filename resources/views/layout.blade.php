@@ -14,7 +14,7 @@
         </div>
     
         <!-- <a href="{{ url('/users') }}" class="logo"><img src="https://img.icons8.com/ios/50/000000/person-at-home.png" class="p100"/></a> -->
-        <form action="{{ route('Uploadfile') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('UploadFile') }}" method="POST" enctype="multipart/form-data">
              @csrf
             <div class="upload-form" >
                 <div class="upload-btn " onclick="" id="upload-button" ><h4>選擇檔案</h4></div>
