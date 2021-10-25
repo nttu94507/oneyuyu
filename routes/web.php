@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\uploadfile;
+use App\Http\Controllers\Uploadfile;
 use App\Http\Controllers\Users;
 /*
 |--------------------------------------------------------------------------
@@ -20,5 +20,5 @@ Route::get('/', function () {return view('welcome');});
 //     return View('users')->with('excel',null);
 // });
 
-Route::post('uploadfile', [UploadFile::class, 'fileImport'])->name('uploadfile');
+Route::post('uploadfile', [UploadFile::class, 'fileImport'])->name('Uploadfile');
 Route::get('users', [Users::class, 'Users']);
