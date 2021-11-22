@@ -17,13 +17,13 @@
             @csrf
             <div>
                 <p>計分</p>
-                <input type="text" name="shot1" ><input type="text" name="show1" >
-                <input type="text" name="shot2" ><input type="text" name="show2" >
-                <input type="text" name="shot3" ><input type="text" name="show3" >
-                <input type="text" name="shot4" ><input type="text" name="show4" >
-                <input type="text" name="shot5" ><input type="text" name="show5" >
-                <input type="text" name="shot6" ><input type="text" name="show6" >
-                <input type="text" name="shotX" ><input type="hidden" name="shotM" >
+                <input type="text" name="shot1" >
+                <input type="text" name="shot2" >
+                <input type="text" name="shot3" >
+                <input type="text" name="shot4" >
+                <input type="text" name="shot5" >
+                <input type="text" name="shot6" >
+                <input type="text" name="shotX" >
             </div>
             <div>
                 <a name="pointX" onclick="">X</a>
@@ -37,38 +37,43 @@
                 <a name="pointclear" onclick="">clear</a>
             </div>
             <div>
-                <input type="submit" value="送出成績">
+                    <button>送出成績</button>
             </div>
         </form>
     </body>
     <script>
         let shotnum = 1
         let shotname = "shot"+shotnum;
-        let showname = "show"+shotnum;
+        let x = 0;
+        
         $(document).ready(function (){
-            $("input[name='show1']").focus();  
+            $("input[name='shot1']").focus();  
+            $("input[name='shotX']").val(0);
         });
         $("a[name='pointX']").click(function(){
             
             if($(this).text()=="X"){
-                $("input[name='shotX']").val();
+               console.log( $("input[name='shotX']").val());
+               x = $("input[name='shotX']").val() ;
+               x = x++
+               console.log(x);
+               $("input[name='shotX']").val(x + 1);
                 $("input[name='"+shotname+"']").val(10);
             } else if ($(this).text()=="M"){
                 $("input[name='"+shotname+"']").val(0);
             }else{
                 $("input[name='"+shotname+"']").val($(this).text());
             }
-            $("input[name='"+showname+"']").val($(this).text());
             if(shotnum<6){
                 shotnum = shotnum+1
             }else{
                 shotnum = 1
             }
-            showname = "show"+shotnum;
-            $("input[name='"+showname+"']").focus();
+            shotname = "shot"+shotnum;
+            $("input[name='"+shotname+"']").focus();
             
         })
-        $("button[name='pointclear']").click(function(){
+        $("a[name='pointclear']").click(function(){
             $("input").val('');
         })
     </script>
