@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UploadFile;
 use App\Http\Controllers\Users;
+use App\Http\Controllers\Archery;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,3 +23,4 @@ Route::get('/', function () {return view('welcome');});
 
 Route::post('UploadFile', [UploadFile::class, 'fileImport'])->name('UploadFile');
 Route::get('users', [Users::class, 'Users']);
+Route::get('archery', [Archery::class, 'archery']);
