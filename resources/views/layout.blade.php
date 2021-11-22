@@ -17,7 +17,7 @@
         <form action="{{ url('/UploadFile') }}" method="POST" enctype="multipart/form-data">
              @csrf
             <div class="upload-form" >
-                <div class="upload-btn " onclick="" id="upload-button" ><h4>選擇檔案</h4></div>
+                <div class="upload-btn " onclick="" id="upload-button" ><h4> 選擇檔案 </h4></div>
                 <input type="file" name="file" class="between hidden" id="fileInput" >
                 <div class="test"><button class="between hidden" id="submit-btn">上傳檔案</button></div>
             </div>

@@ -13,25 +13,64 @@
                 <a href="{{ url('/archery') }}" class="logo"><i class="fi fi-rr-home p100"></i></a>
             </div>
         </div>
-        <div>
-            <p>計分</p>
-            <input type="text" name="shot1" >
-            <input type="text" name="shot2" maxlength=2>
-            <input type="text" name="shot3" maxlength=2>
-            <input type="text" name="shot4" maxlength=2>
-            <input type="text" name="shot5" maxlength=2>
-            <input type="text" name="shot6" maxlength=2 >
-        </div>
-        <button name="pointX" onclick="">1</button>
+        <form action="{{ url('/submitscore') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div>
+                <p>計分</p>
+                <input type="text" name="shot1" ><input type="text" name="show1" >
+                <input type="text" name="shot2" ><input type="text" name="show2" >
+                <input type="text" name="shot3" ><input type="text" name="show3" >
+                <input type="text" name="shot4" ><input type="text" name="show4" >
+                <input type="text" name="shot5" ><input type="text" name="show5" >
+                <input type="text" name="shot6" ><input type="text" name="show6" >
+                <input type="text" name="shotX" ><input type="hidden" name="shotM" >
+            </div>
+            <div>
+                <a name="pointX" onclick="">X</a>
+                <a name="pointX" onclick="">10</a>
+                <a name="pointX" onclick="">9</a>
+                <a name="pointX" onclick="">8</a>
+                <a name="pointX" onclick="">7</a>
+                <a name="pointX" onclick="">6</a>
+                <a name="pointX" onclick="">5</a>
+                <a name="pointX" onclick="">M</a>
+                <a name="pointclear" onclick="">clear</a>
+            </div>
+            <div>
+                <input type="submit" value="送出成績">
+            </div>
+        </form>
     </body>
     <script>
+        let shotnum = 1
+        let shotname = "shot"+shotnum;
+        let showname = "show"+shotnum;
         $(document).ready(function (){
-            $("input[name='shot1']").focus();  
+            $("input[name='show1']").focus();  
         });
-        $('input').keyup(function(){   
-            $(this).next(':input').focus();   
-         
-        });  
+        $("a[name='pointX']").click(function(){
+            
+            if($(this).text()=="X"){
+                $("input[name='shotX']").val();
+                $("input[name='"+shotname+"']").val(10);
+            } else if ($(this).text()=="M"){
+                $("input[name='"+shotname+"']").val(0);
+            }else{
+                $("input[name='"+shotname+"']").val($(this).text());
+            }
+            $("input[name='"+showname+"']").val($(this).text());
+            if(shotnum<6){
+                shotnum = shotnum+1
+            }else{
+                shotnum = 1
+            }
+            showname = "show"+shotnum;
+            $("input[name='"+showname+"']").focus();
+            
+        })
+        $("button[name='pointclear']").click(function(){
+            $("input").val('');
+        })
     </script>
 </html>
 <script>

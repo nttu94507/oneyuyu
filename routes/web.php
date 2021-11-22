@@ -24,3 +24,4 @@ Route::get('/', function () {return view('welcome');});
 Route::post('UploadFile', [UploadFile::class, 'fileImport'])->name('UploadFile');
 Route::get('users', [Users::class, 'Users']);
 Route::get('archery', [Archery::class, 'archery']);
+Route::post('submitscore', [Archery::class, 'countscore']);
