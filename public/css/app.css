@@ -101,3 +101,18 @@ a {
 form {
   margin: 0;
 }
+
+.scorebtn {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+}
+
+.scorebtn > a {
+  flex: 1;
+  margin: 0 1px;
+  background-color: #f2f530;
+  font-size: x-large;
+  justify-content: center;
+  text-align: center;
+}

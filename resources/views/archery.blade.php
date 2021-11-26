@@ -23,9 +23,11 @@
                 <input type="text" name="shot4" >
                 <input type="text" name="shot5" >
                 <input type="text" name="shot6" >
-                <input type="number" name="total" value=0>
             </div>
             <div>
+            <h3>總分<input type="number" name="total" value=0><h3>
+            </div>
+            <div class="scorebtn">
                 <a name="pointX" onclick="">X</a>
                 <a name="pointX" onclick="">10</a>
                 <a name="pointX" onclick="">9</a>
@@ -37,6 +39,7 @@
                 <a name="pointclear" onclick="">clear</a>
             </div>
             <div>
+            <h3>選手帳號<input type="text" name="userac"> </h3>
                     <button>送出成績</button>
             </div>
         </form>
@@ -75,6 +78,7 @@
                 shotnum = shotnum+1
             }else{
                 shotnum = 1
+                alert("請送出分數或者清除重新輸入");
             }
             shotname = "shot"+shotnum;
             $("input[name='"+shotname+"']").focus();
@@ -83,6 +87,7 @@
         $("a[name='pointclear']").click(function(){
             $("input").val('');
             $("input[name='total']").val(0);
+            $("input[name='shot1']").focus();  
         })
     </script>
 </html>

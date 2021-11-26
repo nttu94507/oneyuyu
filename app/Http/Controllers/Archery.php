@@ -21,10 +21,10 @@ class Archery extends Controller
         $score->shot4=$request->shot4;
         $score->shot5=$request->shot5;
         $score->shot6=$request->shot6;
+        $score->total=$request->total;
 
-        $total= $request->shot1+$request->shot2+$request->shot3+$request->shot4+$request->shot5+$request->shot6;
-        $score->total=$total;
-        dd($score->shot1);
+    
+        // dd($score);
         $score->save();
 
         return view('archery');
