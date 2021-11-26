@@ -15,12 +15,12 @@ class CreateScoreTable extends Migration
     {
         Schema::create('score', function (Blueprint $table) {
             $table->id();
-            $table->tinyInteger('shot1');
-            $table->tinyInteger('shot2');
-            $table->tinyInteger('shot3');
-            $table->tinyInteger('shot4');
-            $table->tinyInteger('shot5');
-            $table->tinyInteger('shot6');
+            $table->string('shot1');
+            $table->string('shot2');
+            $table->string('shot3');
+            $table->string('shot4');
+            $table->string('shot5');
+            $table->string('shot6');
             $table->tinyInteger('total');
             $table->timestamps();
         });

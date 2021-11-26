@@ -23,7 +23,7 @@
                 <input type="text" name="shot4" >
                 <input type="text" name="shot5" >
                 <input type="text" name="shot6" >
-                <input type="text" name="shotX" >
+                <input type="number" name="total" value=0>
             </div>
             <div>
                 <a name="pointX" onclick="">X</a>
@@ -48,21 +48,28 @@
         
         $(document).ready(function (){
             $("input[name='shot1']").focus();  
-            $("input[name='shotX']").val(0);
+            // $("input[name='total']").val(0);
         });
         $("a[name='pointX']").click(function(){
-            
             if($(this).text()=="X"){
-               console.log( $("input[name='shotX']").val());
-               x = $("input[name='shotX']").val() ;
-               x = x++
-               console.log(x);
-               $("input[name='shotX']").val(x + 1);
-                $("input[name='"+shotname+"']").val(10);
+
+                $("input[name='"+shotname+"']").val("X");
+                total = parseInt($("input[name='total']").val());
+                total = (total+10);
+                $("input[name='total']").val(total);
+
             } else if ($(this).text()=="M"){
+                
                 $("input[name='"+shotname+"']").val(0);
+            
             }else{
+                
                 $("input[name='"+shotname+"']").val($(this).text());
+                total = parseInt($("input[name='total']").val());
+                num = parseInt($(this).text());
+                total = total+num
+                $("input[name='total']").val(total);
+
             }
             if(shotnum<6){
                 shotnum = shotnum+1
@@ -75,6 +82,7 @@
         })
         $("a[name='pointclear']").click(function(){
             $("input").val('');
+            $("input[name='total']").val(0);
         })
     </script>
 </html>
