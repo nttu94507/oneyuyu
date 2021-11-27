@@ -23,7 +23,7 @@
                 <input type="text" name="shot4" >
                 <input type="text" name="shot5" >
                 <input type="text" name="shot6" >
-                <input type="text" name="shotX" >
+                <input type="text" name="total" >
             </div>
             <div>
                 <a name="pointX" onclick="">X</a>
@@ -46,19 +46,14 @@
         let shotname = "shot"+shotnum;
         let x = 0;
         
-        $(document).ready(function (){
-            $("input[name='shot1']").focus();  
+        $(document).ready(function (){ 
             $("input[name='shotX']").val(0);
         });
         $("a[name='pointX']").click(function(){
             
             if($(this).text()=="X"){
-               console.log( $("input[name='shotX']").val());
-               x = $("input[name='shotX']").val() ;
-               x = x++
-               console.log(x);
-               $("input[name='shotX']").val(x + 1);
-                $("input[name='"+shotname+"']").val(10);
+                $("input[name='"+shotname+"']").val('X');
+                t$("input[name='total']").val();
             } else if ($(this).text()=="M"){
                 $("input[name='"+shotname+"']").val(0);
             }else{
@@ -70,7 +65,6 @@
                 shotnum = 1
             }
             shotname = "shot"+shotnum;
-            $("input[name='"+shotname+"']").focus();
             
         })
         $("a[name='pointclear']").click(function(){
