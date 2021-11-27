@@ -90,7 +90,8 @@ h4{
 }
 
 a{
-    text-decoration: none;
+    /* text-decoration: none; */
+
 }
 
 .p100{
@@ -105,3 +106,12 @@ a{
 form{
     margin: 0;
 }
+
+.scorebtn{
+    display: flex;
+}
+
+.scorebtn>a{
+    margin: 5px ;
+}
+

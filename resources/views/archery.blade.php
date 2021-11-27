@@ -26,6 +26,9 @@
                 <input type="text" name="total" >
             </div>
             <div>
+            <h3>總分<input type="number" name="total" value=0><h3>
+            </div>
+            <div class="scorebtn">
                 <a name="pointX" onclick="">X</a>
                 <a name="pointX" onclick="">10</a>
                 <a name="pointX" onclick="">9</a>
@@ -37,6 +40,7 @@
                 <a name="pointclear" onclick="">clear</a>
             </div>
             <div>
+            <h3>選手帳號<input type="text" name="userac"> </h3>
                     <button>送出成績</button>
             </div>
         </form>
@@ -50,25 +54,39 @@
             $("input[name='shotX']").val(0);
         });
         $("a[name='pointX']").click(function(){
-            
             if($(this).text()=="X"){
-                $("input[name='"+shotname+"']").val('X');
-                t$("input[name='total']").val();
+
+                $("input[name='"+shotname+"']").val("X");
+                total = parseInt($("input[name='total']").val());
+                total = (total+10);
+                $("input[name='total']").val(total);
+
             } else if ($(this).text()=="M"){
+                
                 $("input[name='"+shotname+"']").val(0);
+            
             }else{
+                
                 $("input[name='"+shotname+"']").val($(this).text());
+                total = parseInt($("input[name='total']").val());
+                num = parseInt($(this).text());
+                total = total+num
+                $("input[name='total']").val(total);
+
             }
             if(shotnum<6){
                 shotnum = shotnum+1
             }else{
                 shotnum = 1
+                alert("請送出分數或者清除重新輸入");
             }
             shotname = "shot"+shotnum;
             
         })
         $("a[name='pointclear']").click(function(){
             $("input").val('');
+            $("input[name='total']").val(0);
+            $("input[name='shot1']").focus();  
         })
     </script>
 </html>
