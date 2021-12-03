@@ -111,8 +111,10 @@ form {
 .scorebtn > a {
   flex: 1;
   margin: 0 1px;
-  background-color: #f2f530;
+  padding: 5px;
+  background-color: #858585;
   font-size: x-large;
   justify-content: center;
   text-align: center;
+  border-radius: 5px;
 }
