@@ -8,13 +8,14 @@ use App\Models\score;
 class Archery extends Controller
 {
     public function archery(Request $request){
+        // $gamelist = score::all();
+        // return respone()->json($gamelist);
         return view('archery');
     }
 
     public function countscore(Request $request){
         $score = new score;
 
-        
         $score->shot1=$request->shot1;
         $score->shot2=$request->shot2;
         $score->shot3=$request->shot3;
