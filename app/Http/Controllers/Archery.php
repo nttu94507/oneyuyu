@@ -23,8 +23,6 @@ class Archery extends Controller
         $score->shot6=$request->shot6;
         $score->total=$request->total;
 
-    
-        // dd($score);
         $score->save();
 
         return view('archery');

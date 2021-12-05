@@ -15,13 +15,8 @@ use App\Http\Controllers\Archery;
 |
 */
 Route::get('product', [ProductController::class, 'list']);
-Route::get('/', function () {return view('welcome');});
-// Route::get('users', function()
-// {
-//     return View('users')->with('excel',null);
-// });
-
+// Route::get('/', function () {return view('welcome');});
 Route::post('UploadFile', [UploadFile::class, 'fileImport'])->name('UploadFile');
 Route::get('users', [Users::class, 'Users']);
-Route::get('archery', [Archery::class, 'archery']);
+Route::get('/', [Archery::class, 'archery']);
 Route::post('submitscore', [Archery::class, 'countscore']);
