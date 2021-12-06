@@ -11286,3 +11286,18 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+@media only screen and (min-width: 769px) {
+  .BG {
+    background-color: #111;
+  }
+}
+@media only screen and (min-width: 321px) and (max-width: 768px) {
+  .BG {
+    background-color: #887f7f;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 320px) {
+  .BG {
+    background-color: #471818;
+  }
+}

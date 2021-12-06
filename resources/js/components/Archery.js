@@ -3,12 +3,12 @@ import React, {Component} from 'react';
 
 
 
-const Master = () => {
+const Archery = () => {
     return(
       <div >
-        this is master
+        this is archery
       </div>
     )
 }
 
-export default Master;
+export default Archery;
