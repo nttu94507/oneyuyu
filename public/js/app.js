@@ -5283,10 +5283,24 @@ var react_dom_1 = __importDefault(__webpack_require__(/*! react-dom */ "./node_m
 
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
 
+var Master_1 = __importDefault(__webpack_require__(/*! ../Master */ "./resources/js/components/Master/index.ts"));
+
+var Archery_1 = __importDefault(__webpack_require__(/*! ../Archery */ "./resources/js/components/Archery/index.ts"));
+
 function App() {
   return react_1["default"].createElement("div", {
     className: "BG"
-  }, react_1["default"].createElement("h1", null, "Welcome to React Router!"));
+  }, react_1["default"].createElement("h1", null, "Welcome to React Router!"), react_1["default"].createElement(react_router_dom_1.Link, {
+    to: "/"
+  }, "master"), react_1["default"].createElement(react_router_dom_1.Link, {
+    to: "/archery"
+  }, "Archery"), react_1["default"].createElement(react_router_dom_1.Routes, null, react_1["default"].createElement(react_router_dom_1.Route, {
+    path: "/",
+    element: react_1["default"].createElement(Master_1["default"], null)
+  }), react_1["default"].createElement(react_router_dom_1.Route, {
+    path: "/archery",
+    element: react_1["default"].createElement(Archery_1["default"], null)
+  })));
 }
 
 exports["default"] = App;
@@ -5319,6 +5333,95 @@ Object.defineProperty(exports, "__esModule", ({
 var app_1 = __importDefault(__webpack_require__(/*! ./app */ "./resources/js/components/App/app.tsx"));
 
 exports["default"] = app_1["default"];
+
+/***/ }),
+
+/***/ "./resources/js/components/Archery/Archery.tsx":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/Archery/Archery.tsx ***!
+  \*****************************************************/
+/***/ (() => {
+
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\Lianchen\\Desktop\\oneyuyu\\resources\\js\\components\\Archery\\Archery.tsx: Unexpected token (33:12)\n\n\u001b[0m \u001b[90m 31 |\u001b[39m     \u001b[36mvar\u001b[39m _b \u001b[33m=\u001b[39m (\u001b[35m0\u001b[39m\u001b[33m,\u001b[39m react_1\u001b[33m.\u001b[39museState)()\u001b[33m,\u001b[39m shot1 \u001b[33m=\u001b[39m _b[\u001b[35m0\u001b[39m]\u001b[33m,\u001b[39m setShot1 \u001b[33m=\u001b[39m _b[\u001b[35m1\u001b[39m]\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 32 |\u001b[39m     \u001b[36mfunction\u001b[39m clickBtn(e) {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 33 |\u001b[39m         \u001b[36mvar\u001b[39m \u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 34 |\u001b[39m         \u001b[90m// const name = parseInt(e,10);\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 35 |\u001b[39m         \u001b[90m// console.log(name);\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 36 |\u001b[39m         \u001b[90m// const add =  total+name; \u001b[39m\u001b[0m\n    at Object._raise (C:\\Users\\Lianchen\\Desktop\\oneyuyu\\node_modules\\@babel\\parser\\lib\\index.js:510:17)\n    at Object.raiseWithData (C:\\Users\\Lianchen\\Desktop\\oneyuyu\\node_modules\\@babel\\parser\\lib\\index.js:503:17)\n    at Object.raise (C:\\Users\\Lianchen\\Desktop\\oneyuyu\\node_modules\\@babel\\parser\\lib\\index.js:464:17)\n    at Object.unexpected (C:\\Users\\Lianchen\\Desktop\\oneyuyu\\node_modules\\@babel\\parser\\lib\\index.js:3368:16)\n    at Object.parseIdentifierName (C:\\Users\\Lianchen\\Desktop\\oneyuyu\\node_modules\\@babel\\parser\\lib\\index.js:12489:18)\n    at Object.parseIdentifier (C:\\Users\\Lianchen\\Desktop\\oneyuyu\\node_modules\\@babel\\parser\\lib\\index.js:12467:23)\n    at Object.parseBindingAtom (C:\\Users\\Lianchen\\Desktop\\oneyuyu\\node_modules\\@babel\\parser\\lib\\index.js:10631:17)\n    at Object.parseVarId (C:\\Users\\Lianchen\\Desktop\\oneyuyu\\node_modules\\@babel\\parser\\lib\\index.js:13622:20)\n    at Object.parseVar (C:\\Users\\Lianchen\\Desktop\\oneyuyu\\node_modules\\@babel\\parser\\lib\\index.js:13598:12)\n    at Object.parseVarStatement (C:\\Users\\Lianchen\\Desktop\\oneyuyu\\node_modules\\@babel\\parser\\lib\\index.js:13415:10)");
+
+/***/ }),
+
+/***/ "./resources/js/components/Archery/index.ts":
+/*!**************************************************!*\
+  !*** ./resources/js/components/Archery/index.ts ***!
+  \**************************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+
+var Archery_1 = __importDefault(__webpack_require__(/*! ./Archery */ "./resources/js/components/Archery/Archery.tsx"));
+
+exports["default"] = Archery_1["default"];
+
+/***/ }),
+
+/***/ "./resources/js/components/Master/Master.tsx":
+/*!***************************************************!*\
+  !*** ./resources/js/components/Master/Master.tsx ***!
+  \***************************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var Master = function Master() {
+  return react_1["default"].createElement("div", null, "this is master");
+};
+
+exports["default"] = Master;
+
+/***/ }),
+
+/***/ "./resources/js/components/Master/index.ts":
+/*!*************************************************!*\
+  !*** ./resources/js/components/Master/index.ts ***!
+  \*************************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+
+var Master_1 = __importDefault(__webpack_require__(/*! ./Master */ "./resources/js/components/Master/Master.tsx"));
+
+exports["default"] = Master_1["default"];
 
 /***/ }),
 
