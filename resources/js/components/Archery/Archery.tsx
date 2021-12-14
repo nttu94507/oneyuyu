@@ -1,6 +1,10 @@
 import React, {useState,useContext,createContext} from 'react';
 
 
+interface omclick {
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
+}
+
 
 const Score = () => {
   const num = [1,2,3,4,5,6]
@@ -11,15 +15,23 @@ const Score = () => {
 
 
 const Archery = () => {
-  const [total,setTotal] = useState(0) ;
-  const [shot1,setShot1] = useState();
+  const [total,setTotal] = useState(5) ;
+  const [shot,setShot] = useState(0);
+ 
   
-  function clickBtn (e:Event){
-    const
+  const clickBtn =(event: React.MouseEvent<HTMLButtonElement>)=>{
+    event.preventDefault();
+    const answer: HTMLButtonElement = event.currentTarget;
+    console.log(answer.value);
+    const val= answer.value;
+    setShot(parseInt(val));
+
+   
 
     // const name = parseInt(e,10);
     // console.log(name);
     // const add =  total+name; 
+
     // setTotal(add);
     // console.log(total);
     
@@ -40,19 +52,19 @@ const Archery = () => {
             <input  key="3" name="shot3" />
             <input  key="4" name="shot4" />
             <input  key="5" name="shot5" />
-            <input  key="6" name="shot6" />
-            <input value={total} />
+            <input  key="6" name="shot6" value={shot}/>
+            <input value={total}/>
           </div>
           </form>
           <div className="scorebutton">
-            <button value="10" key="X" name="scoreX"  onClick={(e: React.ChangeEvent<HTMLButtonElement> )=>clickBtn(e.currentTarget.value)}>X</button>
-            <button value="10" key="10" name="score10" onClick={(event)=>clickBtn(event.target.value)}>10</button>
+            <button value="10" key="X" id="1" name="scoreX"  onClick={clickBtn}>X</button>
+            {/* <button value="10" key="10" name="score10" onClick={(event)=>clickBtn(event.target.value)}>10</button>
             <button value="9"  key="9" name="score9"  onClick={(event)=>clickBtn(event.target.value)}>9</button>
             <button value="8"  key="8" name="score8"  onClick={(event)=>clickBtn(event.target.value)}>8</button>
             <button value="7"  key="7" name="score7"  onClick={(event)=>clickBtn(event.target.value)}>7</button>
             <button value="6"  key="6" name="score6"  onClick={(event)=>clickBtn(event.target.value)}>6</button>
             <button value="5"  key="5" name="score5"  onClick={(event)=>clickBtn(event.target.value)}>5</button>
-            <button value="0"  key="M" name="scoreM"  onClick={(event)=>clickBtn(event.target.value)}>M</button>
+            <button value="0"  key="M" name="scoreM"  onClick={(event)=>clickBtn(event.target.value)}>M</button> */}
             <button value="0"  key="clear" name="clear"  onClick={clear}>clear</button>
             
 
