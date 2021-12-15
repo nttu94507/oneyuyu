@@ -5294,11 +5294,16 @@ function App() {
     to: "/"
   }, "master"), react_1["default"].createElement(react_router_dom_1.Link, {
     to: "/archery"
-  }, "Archery"), react_1["default"].createElement(react_router_dom_1.Routes, null, react_1["default"].createElement(react_router_dom_1.Route, {
+  }, "Archery"), react_1["default"].createElement(react_router_dom_1.Link, {
+    to: "/creategame"
+  }, "\u5EFA\u7ACB\u8CFD\u5C40"), react_1["default"].createElement(react_router_dom_1.Routes, null, react_1["default"].createElement(react_router_dom_1.Route, {
     path: "/",
     element: react_1["default"].createElement(Master_1["default"], null)
   }), react_1["default"].createElement(react_router_dom_1.Route, {
     path: "/archery",
+    element: react_1["default"].createElement(Archery_1["default"], null)
+  }), react_1["default"].createElement(react_router_dom_1.Route, {
+    path: "/creategame",
     element: react_1["default"].createElement(Archery_1["default"], null)
   })));
 }
@@ -5385,16 +5390,6 @@ Object.defineProperty(exports, "__esModule", ({
 
 var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
-var Score = function Score() {
-  var num = [1, 2, 3, 4, 5, 6];
-  return num.map(function (e) {
-    return react_1["default"].createElement("input", {
-      key: e,
-      name: "shot" + e
-    });
-  });
-};
-
 var Archery = function Archery() {
   var _a = (0, react_1.useState)(0),
       total = _a[0],
@@ -5474,7 +5469,7 @@ var Archery = function Archery() {
         countShot();
       }
     } else {
-      alert("已經滿6箭");
+      alert("已經射滿6箭了哦~");
     }
   };
 

@@ -1,19 +1,6 @@
 import React, {useState,useContext,createContext} from 'react';
 
 
-interface omclick {
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
-}
-
-
-const Score = () => {
-  const num = [1,2,3,4,5,6]
-  return num.map((e)=>
-          <input  key={e} name={"shot"+e} />
-      )
-}
-
-
 const Archery = () => {
   const [total,setTotal] = useState(0) ;
   const [shot,setShot] = useState(1);
@@ -72,7 +59,7 @@ const Archery = () => {
       }
       
     }else{
-      alert("已經滿6箭")
+      alert("已經射滿6箭了哦~")
     }
   }
 
@@ -84,8 +71,7 @@ const Archery = () => {
     setShot3("");
     setShot4("");
     setShot5("");
-    setShot6("");
-
+    setShot6("")
   }
 
  
