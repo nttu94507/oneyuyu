@@ -5396,62 +5396,170 @@ var Score = function Score() {
 };
 
 var Archery = function Archery() {
-  var _a = (0, react_1.useState)(5),
+  var _a = (0, react_1.useState)(0),
       total = _a[0],
       setTotal = _a[1];
 
-  var _b = (0, react_1.useState)(0),
+  var _b = (0, react_1.useState)(1),
       shot = _b[0],
       setShot = _b[1];
+
+  var _c = (0, react_1.useState)(""),
+      shot1 = _c[0],
+      setShot1 = _c[1];
+
+  var _d = (0, react_1.useState)(""),
+      shot2 = _d[0],
+      setShot2 = _d[1];
+
+  var _e = (0, react_1.useState)(""),
+      shot3 = _e[0],
+      setShot3 = _e[1];
+
+  var _f = (0, react_1.useState)(""),
+      shot4 = _f[0],
+      setShot4 = _f[1];
+
+  var _g = (0, react_1.useState)(""),
+      shot5 = _g[0],
+      setShot5 = _g[1];
+
+  var _h = (0, react_1.useState)(""),
+      shot6 = _h[0],
+      setShot6 = _h[1];
 
   var clickBtn = function clickBtn(event) {
     event.preventDefault();
     var answer = event.currentTarget;
-    console.log(answer.value);
     var val = answer.value;
-    setShot(parseInt(val)); // const name = parseInt(e,10);
-    // console.log(name);
-    // const add =  total+name; 
-    // setTotal(add);
-    // console.log(total);
+
+    var countShot = function countShot() {
+      if (shot == 1) {
+        setShot1(val);
+      } else if (shot == 2) {
+        setShot2(val);
+      } else if (shot == 3) {
+        setShot3(val);
+      } else if (shot == 4) {
+        setShot4(val);
+      } else if (shot == 5) {
+        setShot5(val);
+      } else if (shot == 6) {
+        setShot6(val);
+      }
+    };
+
+    if (shot <= 6) {
+      setShot(shot + 1);
+
+      if (val == "X" || val == "10") {
+        setTotal(total + 10);
+        countShot();
+      } else if (val == "9") {
+        setTotal(total + 9);
+        countShot();
+      } else if (val == "8") {
+        setTotal(total + 8);
+        countShot();
+      } else if (val == "7") {
+        setTotal(total + 7);
+        countShot();
+      } else if (val == "6") {
+        setTotal(total + 6);
+        countShot();
+      } else if (val == "5") {
+        setTotal(total + 5);
+        countShot();
+      } else if (val == "M") {
+        countShot();
+      }
+    } else {
+      alert("已經滿6箭");
+    }
   };
 
   function clear() {
     setTotal(0);
+    setShot(1);
+    setShot1("");
+    setShot2("");
+    setShot3("");
+    setShot4("");
+    setShot5("");
+    setShot6("");
   }
 
   return react_1["default"].createElement("div", null, react_1["default"].createElement("form", null, react_1["default"].createElement("div", {
     className: "score"
   }, react_1["default"].createElement("input", {
     key: "1",
-    name: "shot1"
+    name: "shot1",
+    defaultValue: shot1
   }), react_1["default"].createElement("input", {
     key: "2",
-    name: "shot2"
+    name: "shot2",
+    value: shot2
   }), react_1["default"].createElement("input", {
     key: "3",
-    name: "shot3"
+    name: "shot3",
+    value: shot3
   }), react_1["default"].createElement("input", {
     key: "4",
-    name: "shot4"
+    name: "shot4",
+    value: shot4
   }), react_1["default"].createElement("input", {
     key: "5",
-    name: "shot5"
+    name: "shot5",
+    value: shot5
   }), react_1["default"].createElement("input", {
     key: "6",
     name: "shot6",
-    value: shot
+    value: shot6
   }), react_1["default"].createElement("input", {
     value: total
   }))), react_1["default"].createElement("div", {
     className: "scorebutton"
   }, react_1["default"].createElement("button", {
-    value: "10",
-    key: "X",
-    id: "1",
+    value: "X",
+    id: "M",
     name: "scoreX",
     onClick: clickBtn
   }, "X"), react_1["default"].createElement("button", {
+    value: "10",
+    id: "10",
+    name: "score10",
+    onClick: clickBtn
+  }, "10"), react_1["default"].createElement("button", {
+    value: "9",
+    id: "9",
+    name: "score9",
+    onClick: clickBtn
+  }, "9"), react_1["default"].createElement("button", {
+    value: "8",
+    id: "8",
+    name: "score8",
+    onClick: clickBtn
+  }, "8"), react_1["default"].createElement("button", {
+    value: "7",
+    id: "7",
+    name: "score7",
+    onClick: clickBtn
+  }, "7"), react_1["default"].createElement("button", {
+    value: "6",
+    id: "6",
+    name: "score6",
+    onClick: clickBtn
+  }, "6"), react_1["default"].createElement("button", {
+    value: "5",
+    id: "5",
+    name: "score5",
+    onClick: clickBtn
+  }, "5"), react_1["default"].createElement("button", {
+    value: "M",
+    id: "M",
+    name: "scoreM",
+    onClick: clickBtn
+  }, "M"), react_1["default"].createElement("button", {
     value: "0",
     key: "clear",
     name: "clear",
@@ -59296,7 +59404,7 @@ function _extends() {
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"_args":[["axios@0.21.4","C:\\\\Users\\\\nttu94507\\\\Desktop\\\\oneyuyu"]],"_development":true,"_from":"axios@0.21.4","_id":"axios@0.21.4","_inBundle":false,"_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_location":"/axios","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"axios@0.21.4","name":"axios","escapedName":"axios","rawSpec":"0.21.4","saveSpec":null,"fetchSpec":"0.21.4"},"_requiredBy":["#DEV:/"],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_spec":"0.21.4","_where":"C:\\\\Users\\\\nttu94507\\\\Desktop\\\\oneyuyu","author":{"name":"Matt Zabriskie"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"bugs":{"url":"https://github.com/axios/axios/issues"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"dependencies":{"follow-redirects":"^1.14.0"},"description":"Promise based HTTP client for the browser and node.js","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"homepage":"https://axios-http.com","jsdelivr":"dist/axios.min.js","keywords":["xhr","http","ajax","promise","node"],"license":"MIT","main":"index.js","name":"axios","repository":{"type":"git","url":"git+https://github.com/axios/axios.git"},"scripts":{"build":"NODE_ENV=production grunt build","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","examples":"node ./examples/server.js","fix":"eslint --fix lib/**/*.js","postversion":"git push && git push --tags","preversion":"npm test","start":"node ./sandbox/server.js","test":"grunt test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json"},"typings":"./index.d.ts","unpkg":"dist/axios.min.js","version":"0.21.4"}');
+module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"Promise based HTTP client for the browser and node.js","main":"index.js","scripts":{"test":"grunt test","start":"node ./sandbox/server.js","build":"NODE_ENV=production grunt build","preversion":"npm test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json","postversion":"git push && git push --tags","examples":"node ./examples/server.js","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","fix":"eslint --fix lib/**/*.js"},"repository":{"type":"git","url":"https://github.com/axios/axios.git"},"keywords":["xhr","http","ajax","promise","node"],"author":"Matt Zabriskie","license":"MIT","bugs":{"url":"https://github.com/axios/axios/issues"},"homepage":"https://axios-http.com","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"jsdelivr":"dist/axios.min.js","unpkg":"dist/axios.min.js","typings":"./index.d.ts","dependencies":{"follow-redirects":"^1.14.0"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}]}');
 
 /***/ })
 
