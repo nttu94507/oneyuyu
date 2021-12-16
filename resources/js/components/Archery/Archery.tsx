@@ -1,4 +1,6 @@
 import React, {useState,useContext,createContext} from 'react';
+import axios from 'axios';
+
 
 
 const Archery = () => {
@@ -74,6 +76,27 @@ const Archery = () => {
     setShot6("")
   }
 
+  const post=()=>{
+    axios.post('/game', {
+      shot1: shot1,
+      shot2: shot2,
+      shot3: shot3,
+      shot4: shot4,
+      shot5: shot5,
+      shot6: shot6,
+      total: total
+    })
+    .then(function (response) {
+      console.log(12313);
+      console.log(response);
+      return axios.get('/archery');
+    })
+    .catch(function (error) {
+      console.log(error.response.data);
+    });
+  } 
+  
+
  
 
     return(
@@ -99,6 +122,7 @@ const Archery = () => {
             <button value="5"  id="5"  name="score5"  onClick={clickBtn}>5</button>
             <button value="M"  id="M"  name="scoreM"  onClick={clickBtn}>M</button>
             <button value="0"  key="clear" name="clear"  onClick={clear}>clear</button>
+            <button key="post" name="post"  onClick={post}>post</button>
           </div>
       </div>
     )

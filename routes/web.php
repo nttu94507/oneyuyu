@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\UploadFile;
 // use App\Http\Controllers\Users;
-// use App\Http\Controllers\Archery;
+use App\Http\Controllers\Archery;
 // /*
 // |--------------------------------------------------------------------------
 // | Web Routes
@@ -21,3 +21,4 @@ use Illuminate\Support\Facades\Route;
 // // Route::get('/', [Archery::class, 'archery']);
 // Route::post('submitscore', [Archery::class, 'countscore']);
 Route::view('/{path?}', 'test');
+Route::post('/game', [Archery::class, 'countscore']);

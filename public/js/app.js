@@ -5384,11 +5384,19 @@ var __importStar = this && this.__importStar || function (mod) {
   return result;
 };
 
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
 
 var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var axios_1 = __importDefault(__webpack_require__(/*! axios */ "./node_modules/axios/index.js"));
 
 var Archery = function Archery() {
   var _a = (0, react_1.useState)(0),
@@ -5484,6 +5492,24 @@ var Archery = function Archery() {
     setShot6("");
   }
 
+  var post = function post() {
+    axios_1["default"].post('/game', {
+      shot1: shot1,
+      shot2: shot2,
+      shot3: shot3,
+      shot4: shot4,
+      shot5: shot5,
+      shot6: shot6,
+      total: total
+    }).then(function (response) {
+      console.log(12313);
+      console.log(response);
+      return axios_1["default"].get('/archery');
+    })["catch"](function (error) {
+      console.log(error.response.data);
+    });
+  };
+
   return react_1["default"].createElement("div", null, react_1["default"].createElement("form", null, react_1["default"].createElement("div", {
     className: "score"
   }, react_1["default"].createElement("input", {
@@ -5559,7 +5585,11 @@ var Archery = function Archery() {
     key: "clear",
     name: "clear",
     onClick: clear
-  }, "clear")));
+  }, "clear"), react_1["default"].createElement("button", {
+    key: "post",
+    name: "post",
+    onClick: post
+  }, "post")));
 };
 
 exports["default"] = Archery;
