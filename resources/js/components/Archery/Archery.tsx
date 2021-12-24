@@ -1,5 +1,7 @@
-import React, {useState,useContext,createContext} from 'react';
+import React, {useState} from 'react';
 import axios from 'axios';
+
+
 
 
 
@@ -87,9 +89,11 @@ const Archery = () => {
       total: total
     })
     .then(function (response) {
-      console.log(12313);
-      console.log(response);
-      return axios.get('/archery');
+      // console.log(12313);
+      console.log(response.data);
+      if (response.data==1){
+        clear();
+      }
     })
     .catch(function (error) {
       console.log(error.response.data);
@@ -109,6 +113,15 @@ const Archery = () => {
             <input  key="4" name="shot4" value={shot4}/>
             <input  key="5" name="shot5" value={shot5}/>
             <input  key="6" name="shot6" value={shot6}/>
+            <div>{shot1}</div>
+            <div>{shot2}</div>
+            <div>{shot3}</div>
+            <div>{shot4}</div>
+            <div>{shot5}</div>
+
+            <div>{shot6}</div>
+            <div>{total}</div>
+
             <input value={total}/>
           </div>
           </form>

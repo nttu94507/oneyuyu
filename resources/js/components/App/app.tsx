@@ -6,7 +6,7 @@ import {
     Route,
     Link
   } from "react-router-dom";
-
+import { Provider,useSelector } from 'react-redux';
 import Master from '../Master';
 import Archery from '../Archery';
 

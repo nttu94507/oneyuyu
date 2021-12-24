@@ -5502,9 +5502,12 @@ var Archery = function Archery() {
       shot6: shot6,
       total: total
     }).then(function (response) {
-      console.log(12313);
-      console.log(response);
-      return axios_1["default"].get('/archery');
+      // console.log(12313);
+      console.log(response.data);
+
+      if (response.data == 1) {
+        clear();
+      }
     })["catch"](function (error) {
       console.log(error.response.data);
     });
@@ -5536,7 +5539,7 @@ var Archery = function Archery() {
     key: "6",
     name: "shot6",
     value: shot6
-  }), react_1["default"].createElement("input", {
+  }), react_1["default"].createElement("div", null, shot1), react_1["default"].createElement("div", null, shot2), react_1["default"].createElement("div", null, shot3), react_1["default"].createElement("div", null, shot4), react_1["default"].createElement("div", null, shot5), react_1["default"].createElement("div", null, shot6), react_1["default"].createElement("div", null, total), react_1["default"].createElement("input", {
     value: total
   }))), react_1["default"].createElement("div", {
     className: "scorebutton"
