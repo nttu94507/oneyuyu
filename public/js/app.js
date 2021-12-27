@@ -5287,6 +5287,8 @@ var Master_1 = __importDefault(__webpack_require__(/*! ../Master */ "./resources
 
 var Archery_1 = __importDefault(__webpack_require__(/*! ../Archery */ "./resources/js/components/Archery/index.ts"));
 
+var Profile_1 = __importDefault(__webpack_require__(/*! ../Profile */ "./resources/js/components/Profile/index.ts"));
+
 function App() {
   return react_1["default"].createElement("div", {
     className: "BG"
@@ -5301,7 +5303,7 @@ function App() {
     element: react_1["default"].createElement(Master_1["default"], null)
   }), react_1["default"].createElement(react_router_dom_1.Route, {
     path: "/archery",
-    element: react_1["default"].createElement(Archery_1["default"], null)
+    element: react_1["default"].createElement(Profile_1["default"], null)
   }), react_1["default"].createElement(react_router_dom_1.Route, {
     path: "/creategame",
     element: react_1["default"].createElement(Archery_1["default"], null)
@@ -5493,7 +5495,7 @@ var Archery = function Archery() {
   }
 
   var post = function post() {
-    axios_1["default"].post('/game', {
+    axios_1["default"].post('/score', {
       shot1: shot1,
       shot2: shot2,
       shot3: shot3,
@@ -5503,8 +5505,7 @@ var Archery = function Archery() {
       total: total
     }).then(function (response) {
       // console.log(12313);
-      console.log(response.data);
-
+      // console.log(response.data);
       if (response.data == 1) {
         clear();
       }
@@ -5633,6 +5634,40 @@ exports["default"] = Archery_1["default"];
 "use strict";
 
 
+var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  Object.defineProperty(o, k2, {
+    enumerable: true,
+    get: function get() {
+      return m[k];
+    }
+  });
+} : function (o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  o[k2] = m[k];
+});
+
+var __setModuleDefault = this && this.__setModuleDefault || (Object.create ? function (o, v) {
+  Object.defineProperty(o, "default", {
+    enumerable: true,
+    value: v
+  });
+} : function (o, v) {
+  o["default"] = v;
+});
+
+var __importStar = this && this.__importStar || function (mod) {
+  if (mod && mod.__esModule) return mod;
+  var result = {};
+  if (mod != null) for (var k in mod) {
+    if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+  }
+
+  __setModuleDefault(result, mod);
+
+  return result;
+};
+
 var __importDefault = this && this.__importDefault || function (mod) {
   return mod && mod.__esModule ? mod : {
     "default": mod
@@ -5643,10 +5678,27 @@ Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
 
-var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var axios_1 = __importDefault(__webpack_require__(/*! axios */ "./node_modules/axios/index.js"));
 
 var Master = function Master() {
-  return react_1["default"].createElement("div", null, "this is master");
+  var _a = (0, react_1.useState)(),
+      state = _a[0],
+      setData = _a[1];
+
+  var arr = []; // let ma = new Map();
+
+  var result = axios_1["default"].post('/show').then(function (response) {
+    arr.push(response.data);
+    console.log(arr);
+  })["catch"](function (error) {// console.log(error.response.data);
+  });
+  var test = arr.map(function (i) {
+    return react_1["default"].createElement("li", null, i.id);
+  }); // console.log(test);
+
+  return react_1["default"].createElement("div", null, react_1["default"].createElement("ul", null, test), "this is master");
 };
 
 exports["default"] = Master;
@@ -5675,6 +5727,62 @@ Object.defineProperty(exports, "__esModule", ({
 var Master_1 = __importDefault(__webpack_require__(/*! ./Master */ "./resources/js/components/Master/Master.tsx"));
 
 exports["default"] = Master_1["default"];
+
+/***/ }),
+
+/***/ "./resources/js/components/Profile/Profile.tsx":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/Profile/Profile.tsx ***!
+  \*****************************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var Master_1 = __importDefault(__webpack_require__(/*! ../Master */ "./resources/js/components/Master/index.ts"));
+
+var Profile = function Profile() {
+  return react_1["default"].createElement("div", null, react_1["default"].createElement(Master_1["default"], null));
+};
+
+exports["default"] = Profile;
+
+/***/ }),
+
+/***/ "./resources/js/components/Profile/index.ts":
+/*!**************************************************!*\
+  !*** ./resources/js/components/Profile/index.ts ***!
+  \**************************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+
+var Profile_1 = __importDefault(__webpack_require__(/*! ./Profile */ "./resources/js/components/Profile/Profile.tsx"));
+
+exports["default"] = Profile_1["default"];
 
 /***/ }),
 

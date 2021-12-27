@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\score;
+use Illuminate\Database\Eloquent\Model;
 
 class Archery extends Controller
 {
@@ -29,6 +30,19 @@ class Archery extends Controller
 
         return $result;
 
+    }
+
+    public function showscore(Request $request){
+
+        $score = score::find(1);
+        $result = [];
+        foreach ($score as $val){
+            // $result[] = $score;
+            // $result[] = $val;
+        }
+  
+
+        return $score;
     }
 
 

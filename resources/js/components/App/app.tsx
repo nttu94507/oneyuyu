@@ -9,6 +9,7 @@ import {
 import { Provider,useSelector } from 'react-redux';
 import Master from '../Master';
 import Archery from '../Archery';
+import Profile from '../Profile';
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
                 <Link to="/creategame">建立賽局</Link>                     
                 <Routes>
                     <Route path="/" element={<Master />} />
-                    <Route path="/archery" element={<Archery />} />
+                    <Route path="/archery" element={<Profile />} />
                     <Route path="/creategame" element={<Archery />} />
                 </Routes>
         </div>

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios';
-
+import Master from '../Master';
 
 
 
@@ -79,7 +79,7 @@ const Archery = () => {
   }
 
   const post=()=>{
-    axios.post('/game', {
+    axios.post('/score', {
       shot1: shot1,
       shot2: shot2,
       shot3: shot3,
@@ -90,7 +90,7 @@ const Archery = () => {
     })
     .then(function (response) {
       // console.log(12313);
-      console.log(response.data);
+      // console.log(response.data);
       if (response.data==1){
         clear();
       }
@@ -138,6 +138,7 @@ const Archery = () => {
             <button key="post" name="post"  onClick={post}>post</button>
           </div>
       </div>
+     
     )
 }
 
