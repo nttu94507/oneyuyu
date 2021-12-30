@@ -20,6 +20,10 @@ use App\Http\Controllers\Archery;
 // Route::get('users', [Users::class, 'Users']);
 // // Route::get('/', [Archery::class, 'archery']);
 // Route::post('submitscore', [Archery::class, 'countscore']);
-Route::view('/{path?}', 'test');
-Route::post('/score', [Archery::class, 'countscore']);
 Route::post('/show', [Archery::class, 'showscore']);
+Route::get('/{path?}', [
+    'uses' => 'App\Http\Controllers\Archery@archery',
+    'as' => 'test',
+    'where' => ['path' => '.*']
+]);
+Route::post('/game', [Archery::class, 'countscore']);

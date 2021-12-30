@@ -21,7 +21,7 @@ class CreateScoreTable extends Migration
             $table->string('shot4');
             $table->string('shot5');
             $table->string('shot6');
-            $table->tinyInteger('round');
+            // $table->tinyInteger('round');
             $table->tinyInteger('total');
             $table->timestamps();
         });

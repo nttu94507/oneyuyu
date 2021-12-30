@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Archery extends Controller
 {
-    public function archery(Request $request){
+    public function archery(){
         // $gamelist = score::all();
         // return respone()->json($gamelist);
-        return view('archery');
+        return view('test');
     }
 
     public function countscore(Request $request){
