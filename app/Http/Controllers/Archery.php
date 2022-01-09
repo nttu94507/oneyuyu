@@ -9,8 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 class Archery extends Controller
 {
     public function archery(){
-        // $gamelist = score::all();
-        // return respone()->json($gamelist);
         return view('test');
     }
 
@@ -34,15 +32,9 @@ class Archery extends Controller
 
     public function showscore(Request $request){
 
-        $score = score::find(1);
-        $result = [];
-        foreach ($score as $val){
-            // $result[] = $score;
-            // $result[] = $val;
-        }
-  
+        $score = score::get();
 
-        return $score;
+        return  $score->toArray();
     }
 
 

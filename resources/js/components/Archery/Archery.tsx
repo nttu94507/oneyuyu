@@ -79,7 +79,7 @@ const Archery = () => {
   }
 
   const post=()=>{
-    axios.post('/score', {
+    axios.post('/game', {
       shot1: shot1,
       shot2: shot2,
       shot3: shot3,
@@ -89,8 +89,7 @@ const Archery = () => {
       total: total
     })
     .then(function (response) {
-      // console.log(12313);
-      // console.log(response.data);
+
       if (response.data==1){
         clear();
       }
