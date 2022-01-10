@@ -25,23 +25,10 @@ const Master = () => {
     }
     fetchData();
   },[]);
-  // const fetchedData = test;
-  
-    //   axios.get('api/show')
-    //   .then(function (response) {
-    //   setTest({score:response.data})
-    //   })
-    //   .catch(function (error) {
-    //   // console.log(error.response.data);
-    // });
-    // console.log(test)
-      
-   
-  
-  // const test1 = test.data.map((i:any)=> <li>{i}</li>);
-  // console.log(test);
+
     return(
-      test.score.map((scor:Socre,i)=> {
+      <React.Fragment>
+      {test.score.map((scor:Socre,i)=> {
           return(
             <ul>
             <li >{scor.shot1}</li>
@@ -53,7 +40,8 @@ const Master = () => {
             <li >{scor.total}</li>
             </ul>
           )
-      })
+      })}
+      </React.Fragment>
 
     )
 

@@ -106,18 +106,11 @@ const Archery = () => {
       <div>
           <form>
           <div className="score">
-            <input  key="1" name="shot1" defaultValue={shot1}/>
-            <input  key="2" name="shot2" value={shot2}/>
-            <input  key="3" name="shot3" value={shot3}/>
-            <input  key="4" name="shot4" value={shot4}/>
-            <input  key="5" name="shot5" value={shot5}/>
-            <input  key="6" name="shot6" value={shot6}/>
             <div>{shot1}</div>
             <div>{shot2}</div>
             <div>{shot3}</div>
             <div>{shot4}</div>
             <div>{shot5}</div>
-
             <div>{shot6}</div>
             <div>{total}</div>
 
