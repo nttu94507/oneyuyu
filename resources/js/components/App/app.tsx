@@ -10,6 +10,8 @@ import {
 import Master from '../Master';
 import Archery from '../Archery';
 import Profile from '../Profile';
+import Login from '../Login';
+
 
 
 
@@ -17,14 +19,15 @@ function App() {
     return (
         
         <div className="BG">
-              <h1>Welcome to React Router!</h1>
+              <h1>Wellcome to Archery bar</h1>
+                <div><Login/></div>
                 <Link to="/">master</Link>
                 <Link to="/archery">Archery</Link>
                 <Link to="/creategame">建立賽局</Link>                     
                 <Routes>
                     <Route path="/" element={<Master />} />
                     <Route path="/archery" element={<Profile />} />
-                    <Route path="/creategame" element={<Archery />} />
+                    <Route path="/creategame" element={<Login />} />
                 </Routes>
         </div>
         

@@ -11301,3 +11301,12 @@ textarea.form-control-lg {
     background-color: #471818;
   }
 }
+.scorebutton {
+  background-color: #fff;
+  display: flex;
+}
+
+.scoreBtn {
+  border-radius: 1px;
+  flex: 1;
+}

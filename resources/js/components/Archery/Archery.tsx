@@ -118,16 +118,16 @@ const Archery = () => {
           </div>
           </form>
           <div className="scorebutton">
-            <button value="X"   id="M"  name="scoreX"  onClick={clickBtn}>X</button>
-            <button value="10"  id="10" name="score10"  onClick={clickBtn}>10</button>
-            <button value="9"   id="9"  name="score9"  onClick={clickBtn}>9</button>
-            <button value="8"   id="8"  name="score8"  onClick={clickBtn}>8</button>
-            <button value="7"  id="7"  name="score7"  onClick={clickBtn}>7</button>
-            <button value="6"  id="6"  name="score6"  onClick={clickBtn}>6</button>
-            <button value="5"  id="5"  name="score5"  onClick={clickBtn}>5</button>
-            <button value="M"  id="M"  name="scoreM"  onClick={clickBtn}>M</button>
-            <button value="0"  key="clear" name="clear"  onClick={clear}>clear</button>
-            <button key="post" name="post"  onClick={post}>post</button>
+            <button value="X"   id="M"  name="scoreX"  onClick={clickBtn} className='scoreBtn'>X</button>
+            <button value="10"  id="10" name="score10"  onClick={clickBtn} className='scoreBtn'>10</button>
+            <button value="9"   id="9"  name="score9"  onClick={clickBtn} className='scoreBtn'>9</button>
+            <button value="8"   id="8"  name="score8"  onClick={clickBtn} className='scoreBtn'>8</button>
+            <button value="7"  id="7"  name="score7"  onClick={clickBtn} className='scoreBtn'>7</button>
+            <button value="6"  id="6"  name="score6"  onClick={clickBtn} className='scoreBtn'>6</button>
+            <button value="5"  id="5"  name="score5"  onClick={clickBtn} className='scoreBtn'>5</button>
+            <button value="M"  id="M"  name="scoreM"  onClick={clickBtn}className='scoreBtn'>M</button>
+            <button value="0"  key="clear" name="clear"  onClick={clear} className='scoreBtn'>clear</button>
+            <button key="post" name="post"  onClick={post} className='scoreBtn'>post</button>
           </div>
       </div>
      
