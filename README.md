@@ -62,3 +62,21 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## How to deploy project
+
+After clone 
+Install composer
+Install npm
+Install Xampp/LAMP/MAMP
+
+
+Run command 
+"composer install  --ignore-platform-reqs"
+"npm install"
+"php artisan key:generate"
+"php atisan serv"
+"npm run watch -poll"
+copy .env.exsample to .env and enter info 
+start your codding
+
