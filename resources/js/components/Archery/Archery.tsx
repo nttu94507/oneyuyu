@@ -79,7 +79,7 @@ const Archery = () => {
   }
 
   const post=()=>{
-    axios.post('/game', {
+    axios.post('api/game', {
       shot1: shot1,
       shot2: shot2,
       shot3: shot3,

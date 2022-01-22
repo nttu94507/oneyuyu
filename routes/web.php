@@ -23,4 +23,4 @@ use App\Http\Controllers\Archery;
 
 Route::get('/{path?}', 'App\Http\Controllers\Archery@archery'
 );
-Route::post('/game', [Archery::class, 'countscore']);
+

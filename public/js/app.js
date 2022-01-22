@@ -5496,7 +5496,7 @@ var Archery = function Archery() {
   }
 
   var post = function post() {
-    axios_1["default"].post('/game', {
+    axios_1["default"].post('api/game', {
       shot1: shot1,
       shot2: shot2,
       shot3: shot3,

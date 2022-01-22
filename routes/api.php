@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::resource('posts', 'PostController');
 Route::get('/show/{id?}', 'App\Http\Controllers\Archery@showscore');
+Route::post('/game', [Archery::class, 'countscore']);
